@@ -1,0 +1,19 @@
+{% extends "base2.html" %}
+
+{% block main %}
+<div>
+    <p>
+        Content in add.html
+    </p>
+
+    <form action="/add" method="POST">
+        {{ form.csrf_token() }}
+        {{ form.title.label }}
+        {{ form.title }}
+        {{ form.submit }}
+    </form>
+    {% if title %}
+    <h1>{{ title }}</h1>
+    {% endif %}
+</div>
+{% endblock %}
